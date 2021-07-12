@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" href="style.css" />
+    <title>Slider</title>
+  </head>
+  <body>
+    <div class="slidercontainer">
+      <div class="showSlide">
+        <img src="images/img1.jpeg" />
+        <div class="content">Slide1 heading</div>
+      </div>
+      <div class="showSlide">
+        <img src="images/img2.jpeg" />
+        <div class="content">Slide2 heading</div>
+      </div>
+
+      <div class="showSlide">
+        <img src="images/img3.jpeg" />
+        <div class="content">Slide3 heading</div>
+      </div>
+
+      <a class="left" onclick="nextSlide(-1)">❮</a>
+      <a class="right" onclick="nextSlide(1)">❯</a>
+      <p id="pageNumber"></p>
+    </div>
+    <script type="text/javascript">
+      var p = document.getElementById("pageNumber");
+      var slide_index = 1;
+      displaySlides(slide_index);
+
+      function nextSlide(n) {
+        displaySlides((slide_index += n));
+        p.innerText = slide_index;
+      }
+
+      function displaySlides(n) {
+        var i;
+        var slides = document.getElementsByClassName("showSlide");
+        if (n > slides.length) {
+          slide_index = 1;
+        }
+        if (n < 1) {
+          slide_index = slides.length;
+        }
+        for (i = 0; i < slides.length; i++) {
+          slides[i].style.display = "none";
+        }
+        slides[slide_index - 1].style.display = "block";
+      }
+    </script>
+  </body>
+</html>
