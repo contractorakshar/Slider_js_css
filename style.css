@@ -1,10 +1,16 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 body {
   margin: 0;
-  margin-top: 2rem;
+  margin-top: 1.5rem;
   background: #e6e6e6;
 }
 .showSlide {
   display: none;
+  box-shadow: 2px 5px 8px gray;
 }
 .showSlide img {
   width: 100%;
@@ -16,7 +22,7 @@ body {
   width: 30vw;
 }
 img {
-  height: 60vh;
+  height: 55vh;
   background-size: cover;
 }
 .left,
@@ -54,4 +60,49 @@ p {
   top: 10px;
   width: 100%;
   text-align: center;
+}
+.indicators {
+  position: absolute;
+  left: 47%;
+  bottom: 35%;
+  display: flex;
+  justify-content: center;
+}
+.indicators div {
+  padding: 0.9rem;
+  height: 0.9rem;
+  font-size: 0.9rem;
+  margin: 0 1rem;
+  background-color: gray;
+  border-radius: 50%;
+  font-weight: bold;
+}
+.form_container {
+  margin-top: 2rem;
+  padding: 1.5rem;
+  text-align: center;
+  box-shadow: 2px 5px 8px gray;
+  width: 100%;
+  border: 2px solid gray;
+}
+form input {
+  width: 50%;
+  margin: 0.2rem 0;
+}
+form input:focus {
+  outline: none;
+  border: 2px red solid;
+}
+#btn_add {
+  background-color: hsl(240, 32%, 63%);
+  padding: 0.2rem 1rem;
+  font-size: medium;
+  font-weight: bold;
+  cursor: pointer;
+  border: none;
+  box-shadow: 2px 5px 5px gray;
+  border-radius: 5px;
+}
+#btn_add:focus {
+  outline: none;
 }
