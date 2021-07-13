@@ -23,8 +23,8 @@ body {
   width: 30vw;
 }
 img {
-  height: 55vh;
-  background-size: cover;
+  height: 57vh;
+  background-size: contain;
 }
 .left,
 .right {
@@ -124,6 +124,7 @@ form input:focus {
   -webkit-box-shadow: 2px 5px 5px gray;
   box-shadow: 2px 5px 5px gray;
   border-radius: 5px;
+  line-height: 2rem;
 }
 #btn_add:focus {
   outline: none;

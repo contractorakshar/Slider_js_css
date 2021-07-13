@@ -6,16 +6,10 @@
   </head>
   <body>
     <div class="slidercontainer">
-      <div class="showSlide">
-        <img src="images/img1.jpeg" />
-        <div class="content">heading</div>
-      </div>
       <a class="left" onclick="nextSlide(-1)">❮</a>
       <a class="right" onclick="nextSlide(1)">❯</a>
     </div>
-    <div class="indicators">
-      <div></div>
-    </div>
+    <div class="indicators"></div>
     <div class="form_container">
       <h3
         style="
@@ -44,9 +38,9 @@
       <label for="Toggle Indicatore">Toggle Indicators</label><br />
 
       <h2 id="heading_Add">Add Page</h2>
-      <form onsubmit="submitHanlder(event)">
-        <input type="text" id="carosoule_heading" required /><br />
-        <input type="file" id="carosoule_img" required /><br />
+      <form onsubmit="submitHanlder(event)" id="form_wrapper">
+        <input type="text" id="carosoule_heading" /><br />
+        <input type="url" id="carosoule_img" required /><br />
         <button id="btn_add" type="submit">Add</button>
       </form>
       <h3
@@ -58,7 +52,14 @@
       >
         Remove Page
       </h3>
-      <button id="btn_add" onclick="Remove()">Remove Current Page</button>
+      <input
+        style="font-size: 1rem; width: 50%"
+        type="number"
+        min="1"
+        id="remove_index"
+        placeholder="Enter Page number or index"
+      /><br />
+      <button id="btn_add" onclick="Remove()">Remove Page</button>
     </div>
     <script src="index.js"></script>
   </body>
