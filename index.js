@@ -1,18 +1,23 @@
 function submitHanlder(event) {
   event.preventDefault();
-  var imgSrc = document.getElementById("carosoule_img").files[0].name;
+  var imgSrc = document.getElementById("carosoule_img").value;
   var headText = document.getElementById("carosoule_heading").value;
   var container = document.createElement("div");
   container.className = "showSlide";
 
   var imgContainer = document.createElement("img");
-  imgContainer.url = imgSrc;
+  imgContainer.src = imgSrc;
+
   var Head = document.createElement("div");
   Head.className = "content";
   Head.innerText = headText;
   container.append(imgContainer);
   container.append(Head);
   document.querySelector(".slidercontainer").appendChild(container);
+  const d = document.createElement("div");
+  d.setAttribute("id", "active");
+  document.querySelector(".indicators").appendChild(d).innerText =
+    slide_index + 1;
 }
 function toggleArrow(n) {
   if (!n.checked) {
@@ -23,6 +28,12 @@ function toggleArrow(n) {
     document.querySelector(".right").style.display = "block";
   }
 }
+function Remove() {
+  var container = document.getElementsByClassName("showSlide");
+  container[1].remove();
+  console.log(container);
+}
+
 function toggleIndicators(i) {
   if (!i.checked) {
     document.querySelector(".indicators ").style.display = "none";
@@ -31,14 +42,12 @@ function toggleIndicators(i) {
   }
 }
 
-var p = document.getElementById("pageNumber");
 var slide_index = 1;
+
 displaySlides(slide_index);
 
 function nextSlide(n) {
   displaySlides((slide_index += n));
-  //   p.innerText = slide_index;
-  document.getElementById("indicator1").innerText = slide_index;
 }
 
 function displaySlides(n) {

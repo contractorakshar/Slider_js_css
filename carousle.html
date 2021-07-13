@@ -5,41 +5,60 @@
     <title>Slider</title>
   </head>
   <body>
-    <input
-      type="checkbox"
-      id="toggle"
-      name="toggle"
-      onclick="toggleArrow(this)"
-      checked
-    />
-    <label for="Toggle Arrow">Toggle Arrow</label><br />
-    <input
-      type="checkbox"
-      id="toggleIndicators"
-      name="toggleIndicators"
-      onclick="toggleIndicators(this)"
-      checked
-    />
-    <label for="Toggle Indicatore">Toggle Indicators</label><br />
-
     <div class="slidercontainer">
       <div class="showSlide">
         <img src="images/img1.jpeg" />
-        <div class="content">Slide1 heading</div>
+        <div class="content">heading</div>
       </div>
       <a class="left" onclick="nextSlide(-1)">❮</a>
       <a class="right" onclick="nextSlide(1)">❯</a>
     </div>
     <div class="indicators">
-      <div id="indicator1"></div>
+      <div></div>
     </div>
     <div class="form_container">
-      <h1>Add Page</h1>
+      <h3
+        style="
+          font-style: italic;
+          position: absolute;
+          text-decoration: underline wavy;
+        "
+      >
+        Toggle Handler
+      </h3>
+      <input
+        type="checkbox"
+        id="toggle"
+        name="toggle"
+        onclick="toggleArrow(this)"
+        checked
+      />
+      <label for="Toggle Arrow">Toggle Arrow</label><br />
+      <input
+        type="checkbox"
+        id="toggleIndicators"
+        name="toggleIndicators"
+        onclick="toggleIndicators(this)"
+        checked
+      />
+      <label for="Toggle Indicatore">Toggle Indicators</label><br />
+
+      <h2 id="heading_Add">Add Page</h2>
       <form onsubmit="submitHanlder(event)">
-        <input type="text" id="carosoule_heading" /><br />
-        <input type="file" id="carosoule_img" /><br />
+        <input type="text" id="carosoule_heading" required /><br />
+        <input type="file" id="carosoule_img" required /><br />
         <button id="btn_add" type="submit">Add</button>
       </form>
+      <h3
+        style="
+          font-style: italic;
+          text-decoration: underline dotted;
+          text-align: left;
+        "
+      >
+        Remove Page
+      </h3>
+      <button id="btn_add" onclick="Remove()">Remove Current Page</button>
     </div>
     <script src="index.js"></script>
   </body>

@@ -1,22 +1,23 @@
 * {
   margin: 0;
   padding: 0;
+  -webkit-box-sizing: border-box;
   box-sizing: border-box;
 }
+
 body {
-  margin: 0;
   margin-top: 1.5rem;
-  background: #e6e6e6;
 }
 .showSlide {
   display: none;
+  -webkit-box-shadow: 2px 5px 8px gray;
   box-shadow: 2px 5px 8px gray;
 }
 .showSlide img {
   width: 100%;
 }
 .slidercontainer {
-  max-width: 1000px;
+  min-width: 30%;
   position: relative;
   margin: auto;
   width: 30vw;
@@ -53,7 +54,7 @@ p {
   background-color: black;
 }
 .content {
-  color: white;
+  color: hsl(0, 4%, 5%);
   font-size: 2rem;
   padding: 8px 12px;
   position: absolute;
@@ -64,30 +65,50 @@ p {
 .indicators {
   position: absolute;
   left: 47%;
-  bottom: 35%;
+  bottom: 41%;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
   justify-content: center;
 }
+
 .indicators div {
+  line-height: 0;
   padding: 0.9rem;
   height: 0.9rem;
+  background-color: gray;
   font-size: 0.9rem;
   margin: 0 1rem;
-  background-color: gray;
+  color: white;
   border-radius: 50%;
   font-weight: bold;
 }
+#active {
+  background: red;
+}
 .form_container {
-  margin-top: 2rem;
   padding: 1.5rem;
   text-align: center;
+  -webkit-box-shadow: 2px 5px 8px gray;
   box-shadow: 2px 5px 8px gray;
-  width: 100%;
+  width: 50%;
+  margin: 2rem auto;
   border: 2px solid gray;
+}
+#heading_Add {
+  text-align: left;
+  -webkit-text-decoration: underline double;
+  text-decoration: underline double;
+  font-style: italic;
+}
+
+.form_container input {
+  margin: 0.5rem 0;
 }
 form input {
   width: 50%;
-  margin: 0.2rem 0;
 }
 form input:focus {
   outline: none;
@@ -95,14 +116,19 @@ form input:focus {
 }
 #btn_add {
   background-color: hsl(240, 32%, 63%);
-  padding: 0.2rem 1rem;
+  padding: 0.3rem 3rem;
   font-size: medium;
   font-weight: bold;
   cursor: pointer;
   border: none;
+  -webkit-box-shadow: 2px 5px 5px gray;
   box-shadow: 2px 5px 5px gray;
   border-radius: 5px;
 }
 #btn_add:focus {
   outline: none;
+}
+#btn_add:hover {
+  color: white;
+  background-color: gray;
 }
