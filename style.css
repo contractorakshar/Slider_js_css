@@ -109,6 +109,7 @@ p {
 }
 form input {
   width: 50%;
+  line-height: 1.2rem;
 }
 form input:focus {
   outline: none;
@@ -124,7 +125,7 @@ form input:focus {
   -webkit-box-shadow: 2px 5px 5px gray;
   box-shadow: 2px 5px 5px gray;
   border-radius: 5px;
-  line-height: 2rem;
+  line-height: 1.2rem;
 }
 #btn_add:focus {
   outline: none;

@@ -21,7 +21,7 @@ function submitHanlder(event) {
   const sub_indicator = document.createElement("div");
 
   sub_indicator.innerText = index += 1;
-
+  sub_indicator.className = "sub_indicator";
   document.querySelector(".indicators").appendChild(sub_indicator);
   nextSlide(1);
   document.getElementById("form_wrapper").reset();
@@ -37,10 +37,13 @@ function toggleArrow(n) {
   }
 }
 function Remove() {
+  let p = document.getElementsByClassName("sub_indicator");
+
   let pageIndex = document.getElementById("remove_index").value;
   var container = document.getElementsByClassName("showSlide");
+  p[pageIndex - 1].remove();
   container[pageIndex - 1].remove();
-  document.getElementsByClassName("indicators")[pageIndex - 1].remove();
+  index += -1;
 }
 
 function toggleIndicators(i) {
