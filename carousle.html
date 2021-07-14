@@ -10,34 +10,35 @@
       <a class="right" onclick="nextSlide(1)">❯</a>
     </div>
     <div class="indicators"></div>
+    <div class="toggle_container">
+      <h3>Toggle Handler</h3>
+      <div style="text-align: center">
+        <input
+          type="checkbox"
+          id="toggle"
+          name="toggle"
+          onclick="toggleArrow(this)"
+          checked
+        />
+        <label for="Toggle Arrow">Toggle Arrow</label>
+        <input
+          type="checkbox"
+          id="toggleIndicators"
+          name="toggleIndicators"
+          onclick="toggleIndicators(this)"
+          checked
+        />
+        <label for="Toggle Indicatore">Toggle Indicators</label>
+        <input
+          type="checkbox"
+          id="toggleSlideShow"
+          onclick="toggleSlidwShow(this)"
+        />
+        <label for="Toggle Indicatore">Toggle SlideShow</label>
+      </div>
+    </div>
     <div class="form_container">
-      <h3
-        style="
-          font-style: italic;
-          position: absolute;
-          text-decoration: underline wavy;
-        "
-      >
-        Toggle Handler
-      </h3>
-      <input
-        type="checkbox"
-        id="toggle"
-        name="toggle"
-        onclick="toggleArrow(this)"
-        checked
-      />
-      <label for="Toggle Arrow">Toggle Arrow</label><br />
-      <input
-        type="checkbox"
-        id="toggleIndicators"
-        name="toggleIndicators"
-        onclick="toggleIndicators(this)"
-        checked
-      />
-      <label for="Toggle Indicatore">Toggle Indicators</label><br />
-
-      <h2 id="heading_Add">Add Page</h2>
+      <h3 id="heading_Add">Add Page</h3>
       <form onsubmit="submitHanlder(event)" id="form_wrapper">
         <input
           type="text"
@@ -49,25 +50,21 @@
           id="carosoule_img"
           placeholder="Enter Image url"
         /><br />
-        <button id="btn_add" type="submit">Add</button>
+        <button id="btn_add" type="submit">ADD</button>
       </form>
-      <h3
-        style="
-          font-style: italic;
-          text-decoration: underline dotted;
-          text-align: left;
-        "
-      >
-        Remove Page
-      </h3>
-      <input
-        style="font-size: 1rem; width: 50%"
-        type="number"
-        min="1"
-        id="remove_index"
-        placeholder="Enter Page number or index"
-      /><br />
-      <button id="btn_add" onclick="Remove()">Remove Page</button>
+    </div>
+    <div class="toggle_container">
+      <h3>REMOVE PAGE</h3>
+      <div style="text-align: center">
+        <input
+          style="width: 50%"
+          type="number"
+          min="1"
+          id="remove_index"
+          placeholder="Enter Page number or index"
+        /><br />
+        <button id="btn_add" onclick="Remove()">REMOVE</button>
+      </div>
     </div>
     <script src="index.js"></script>
   </body>

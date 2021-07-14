@@ -1,12 +1,16 @@
+@import url("https://fonts.googleapis.com/css2?family=Titillium+Web&display=swap");
 * {
   margin: 0;
   padding: 0;
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
 }
-
+h3 {
+  text-decoration: underline;
+}
 body {
   margin-top: 1.5rem;
+  font-family: "Titillium Web", sans-serif;
 }
 .showSlide {
   display: none;
@@ -23,7 +27,7 @@ body {
   width: 30vw;
 }
 img {
-  height: 57vh;
+  height: 450px;
   background-size: contain;
 }
 .left,
@@ -54,18 +58,22 @@ p {
   background-color: black;
 }
 .content {
+  background-color: white;
+  opacity: 0.4;
+  left: 25%;
   color: hsl(0, 4%, 5%);
   font-size: 2rem;
   padding: 8px 12px;
   position: absolute;
   top: 10px;
-  width: 100%;
+  width: 50%;
+  font-weight: bold;
   text-align: center;
 }
 .indicators {
   position: absolute;
-  left: 47%;
-  bottom: 41%;
+  left: 45%;
+  bottom: 26%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -80,7 +88,7 @@ p {
   height: 0.9rem;
   background-color: gray;
   font-size: 0.9rem;
-  margin: 0 1rem;
+  margin: 0 0.3rem;
   color: white;
   border-radius: 50%;
   font-weight: bold;
@@ -89,19 +97,13 @@ p {
   background: red;
 }
 .form_container {
-  padding: 1.5rem;
+  padding: 1rem;
   text-align: center;
   -webkit-box-shadow: 2px 5px 8px gray;
   box-shadow: 2px 5px 8px gray;
   width: 50%;
   margin: 2rem auto;
   border: 2px solid gray;
-}
-#heading_Add {
-  text-align: left;
-  -webkit-text-decoration: underline double;
-  text-decoration: underline double;
-  font-style: italic;
 }
 
 .form_container input {
@@ -116,21 +118,46 @@ form input:focus {
   border: 2px red solid;
 }
 #btn_add {
-  background-color: hsl(240, 32%, 63%);
-  padding: 0.3rem 3rem;
+  background-color: #355c7d;
+  padding: 0.5rem 0;
+  width: 30%;
   font-size: medium;
   font-weight: bold;
   cursor: pointer;
   border: none;
-  -webkit-box-shadow: 2px 5px 5px gray;
-  box-shadow: 2px 5px 5px gray;
-  border-radius: 5px;
   line-height: 1.2rem;
+  color: white;
+  margin-top: 1rem;
 }
 #btn_add:focus {
   outline: none;
 }
 #btn_add:hover {
-  color: white;
-  background-color: gray;
+  border-radius: 10px;
+  color: black;
+  border: 2px solid black;
+  background-color: transparent;
+}
+.toggle_container {
+  border: 2px solid gray;
+  width: 50%;
+  margin: 1rem auto;
+  padding: 1rem;
+}
+.toggle_container h3 {
+  text-align: center;
+  margin-bottom: 1rem;
+}
+label,
+input {
+  padding: 0.2rem 1rem;
+  font-size: 1rem;
+}
+
+.toggle_container input:focus {
+  outline: none;
+}
+.toggle_container:hover {
+  border-radius: 5px;
+  box-shadow: 2px 5px 10px gray;
 }

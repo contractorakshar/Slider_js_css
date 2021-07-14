@@ -1,21 +1,24 @@
-var index = 0;
+"use strict";
+let index = 0;
+let autoSlider = false;
+
 function submitHanlder(event) {
   event.preventDefault();
-  var imgSrc = document.getElementById("carosoule_img").value;
-  var headText = document.getElementById("carosoule_heading").value;
+  const imgSrc = document.getElementById("carosoule_img").value;
+  const headText = document.getElementById("carosoule_heading").value;
 
-  var container = document.createElement("div");
+  const container = document.createElement("div");
   container.className = "showSlide";
 
-  var imgContainer = document.createElement("img");
+  const imgContainer = document.createElement("img");
   imgContainer.src = `${imgSrc}`;
 
-  var Head = document.createElement("div");
-  Head.className = "content";
-  Head.innerText = headText;
+  const head = document.createElement("div");
+  head.className = "content";
+  head.innerText = headText;
 
   container.append(imgContainer);
-  container.append(Head);
+  container.append(head);
   document.querySelector(".slidercontainer").appendChild(container);
 
   const sub_indicator = document.createElement("div");
@@ -24,6 +27,8 @@ function submitHanlder(event) {
   sub_indicator.className = "sub_indicator";
   document.querySelector(".indicators").appendChild(sub_indicator);
   nextSlide(1);
+  document.querySelector(".left").style.display = "block";
+  document.querySelector(".right").style.display = "block";
   document.getElementById("form_wrapper").reset();
 }
 
@@ -37,13 +42,15 @@ function toggleArrow(n) {
   }
 }
 function Remove() {
-  let p = document.getElementsByClassName("sub_indicator");
+  const sub_indicator = document.getElementsByClassName("sub_indicator");
+  const pageIndex = document.getElementById("remove_index").value;
+  const container = document.getElementsByClassName("showSlide");
 
-  let pageIndex = document.getElementById("remove_index").value;
-  var container = document.getElementsByClassName("showSlide");
-  p[pageIndex - 1].remove();
+  sub_indicator[pageIndex - 1].remove();
+
   container[pageIndex - 1].remove();
   index += -1;
+  nextSlide(-1);
 }
 
 function toggleIndicators(i) {
@@ -54,7 +61,7 @@ function toggleIndicators(i) {
   }
 }
 
-var slide_index = 0;
+let slide_index = 0;
 
 displaySlides(slide_index);
 
@@ -63,8 +70,8 @@ function nextSlide(n) {
 }
 
 function displaySlides(n) {
-  var i;
-  var slides = document.getElementsByClassName("showSlide");
+  let i;
+  let slides = document.getElementsByClassName("showSlide");
 
   if (n > slides.length) {
     slide_index = 1;
@@ -77,5 +84,13 @@ function displaySlides(n) {
   }
   if (slides.length > 0) {
     slides[slide_index - 1].style.display = "block";
+  }
+}
+function getSlideIndex() {
+  return index + 1;
+}
+function toggleSlidwShow(slideShow) {
+  if (slideShow.checked) {
+    autoSlider = true;
   }
 }
