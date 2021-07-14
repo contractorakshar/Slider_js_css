@@ -4,47 +4,38 @@
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
 }
-
 h3 {
   text-decoration: underline;
 }
-
 a {
   display: none;
 }
-
 html {
   height: 100%;
 }
-
 body {
   margin-top: 1.5rem;
   font-family: "Titillium Web", sans-serif;
   background-image: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
 }
-
 .showSlide {
   display: none;
   -webkit-box-shadow: 2px 5px 8px gray;
   box-shadow: 2px 5px 8px gray;
+  img {
+    width: 100%;
+  }
 }
-
-.showSlide img {
-  width: 100%;
-}
-
 .slidercontainer {
   min-width: 30%;
   position: relative;
   margin: auto;
   width: 30vw;
 }
-
 img {
   height: 450px;
   background-size: contain;
 }
-
 .left {
   cursor: pointer;
   position: absolute;
@@ -54,12 +45,10 @@ img {
   color: white;
   font-weight: bold;
   font-size: 18px;
+  &:hover {
+    background-color: black;
+  }
 }
-
-.left:hover {
-  background-color: black;
-}
-
 .right {
   cursor: pointer;
   position: absolute;
@@ -71,12 +60,10 @@ img {
   font-size: 18px;
   right: 0;
   border-radius: 3px 0 0 3px;
+  &:hover {
+    background-color: black;
+  }
 }
-
-.right:hover {
-  background-color: black;
-}
-
 p {
   font-size: 1.2rem;
   font-weight: bolder;
@@ -85,12 +72,11 @@ p {
   position: absolute;
   margin: 0 12rem;
 }
-
 .content {
   background-color: white;
   opacity: 0.4;
   left: 25%;
-  color: #0d0c0c;
+  color: hsl(0, 4%, 5%);
   font-size: 2rem;
   padding: 8px 12px;
   position: absolute;
@@ -99,7 +85,6 @@ p {
   font-weight: bold;
   text-align: center;
 }
-
 .indicators {
   position: absolute;
   left: 45%;
@@ -110,24 +95,21 @@ p {
   -webkit-box-pack: center;
   -ms-flex-pack: center;
   justify-content: center;
+  div {
+    line-height: 0;
+    padding: 0.9rem;
+    height: 0.9rem;
+    background-color: gray;
+    font-size: 0.9rem;
+    margin: 0 0.3rem;
+    color: white;
+    border-radius: 50%;
+    font-weight: bold;
+  }
 }
-
-.indicators div {
-  line-height: 0;
-  padding: 0.9rem;
-  height: 0.9rem;
-  background-color: gray;
-  font-size: 0.9rem;
-  margin: 0 0.3rem;
-  color: white;
-  border-radius: 50%;
-  font-weight: bold;
-}
-
 #active {
   background: red;
 }
-
 .form_container {
   padding: 1rem;
   text-align: center;
@@ -136,22 +118,20 @@ p {
   width: 50%;
   margin: 2rem auto;
   border: 2px solid gray;
+  input {
+    margin: 0.5rem 0;
+  }
 }
-
-.form_container input {
-  margin: 0.5rem 0;
+form {
+  input {
+    width: 50%;
+    line-height: 1.2rem;
+    &:focus {
+      outline: none;
+      border: 2px red solid;
+    }
+  }
 }
-
-form input {
-  width: 50%;
-  line-height: 1.2rem;
-}
-
-form input:focus {
-  outline: none;
-  border: 2px red solid;
-}
-
 #btn_add {
   background-color: #355c7d;
   padding: 0.5rem 0;
@@ -163,48 +143,40 @@ form input:focus {
   line-height: 1.2rem;
   color: white;
   margin-top: 1rem;
+  &:focus {
+    outline: none;
+  }
+  &:hover {
+    border-radius: 10px;
+    color: black;
+    border: 2px solid black;
+    background-color: transparent;
+  }
 }
-
-#btn_add:focus {
-  outline: none;
-}
-
-#btn_add:hover {
-  border-radius: 10px;
-  color: black;
-  border: 2px solid black;
-  background-color: transparent;
-}
-
 .toggle_container {
   border: 2px solid gray;
   width: 50%;
   margin: 1rem auto;
   padding: 1rem;
+  h3 {
+    text-align: center;
+    margin-bottom: 1rem;
+  }
+  input {
+    &:focus {
+      outline: none;
+    }
+  }
+  &:hover {
+    border-radius: 5px;
+    box-shadow: 2px 5px 10px gray;
+  }
 }
-
-.toggle_container h3 {
-  text-align: center;
-  margin-bottom: 1rem;
-}
-
-.toggle_container input:focus {
-  outline: none;
-}
-
-.toggle_container:hover {
-  border-radius: 5px;
-  -webkit-box-shadow: 2px 5px 10px gray;
-          box-shadow: 2px 5px 10px gray;
-}
-
 label {
   padding: 0.2rem 1rem;
   font-size: 1rem;
 }
-
 input {
   padding: 0.2rem 1rem;
   font-size: 1rem;
 }
-/*# sourceMappingURL=style.css.map */

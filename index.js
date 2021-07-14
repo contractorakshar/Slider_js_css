@@ -27,18 +27,17 @@ function submitHanlder(event) {
   sub_indicator.className = "sub_indicator";
   document.querySelector(".indicators").appendChild(sub_indicator);
   nextSlide(1);
-  document.querySelector(".left").style.display = "block";
-  document.querySelector(".right").style.display = "block";
+
   document.getElementById("form_wrapper").reset();
 }
 
 function toggleArrow(n) {
-  if (!n.checked) {
-    document.querySelector(".left").style.display = "none";
-    document.querySelector(".right").style.display = "none";
-  } else {
+  if (n.checked && index > 0) {
     document.querySelector(".left").style.display = "block";
     document.querySelector(".right").style.display = "block";
+  } else {
+    document.querySelector(".left").style.display = "none";
+    document.querySelector(".right").style.display = "none";
   }
 }
 function Remove() {
