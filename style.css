@@ -1,3 +1,21 @@
+@-webkit-keyframes fade {
+  from {
+    opacity: 0.6;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fade {
+  from {
+    opacity: 0.6;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -13,20 +31,14 @@ a {
   display: none;
 }
 
-html {
-  height: 100%;
-}
-
 body {
-  margin-top: 1.5rem;
   font-family: "Titillium Web", sans-serif;
-  background-image: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
 }
 
 .showSlide {
   display: none;
-  -webkit-box-shadow: 2px 5px 8px gray;
-  box-shadow: 2px 5px 8px gray;
+  -webkit-box-shadow: 2px 5px 5px gray;
+  box-shadow: 2px 5px 5px gray;
 }
 
 .showSlide img {
@@ -37,6 +49,7 @@ body {
   min-width: 30%;
   position: relative;
   margin: auto;
+  margin-top: 1.5rem;
   width: 30vw;
 }
 
@@ -124,6 +137,10 @@ p {
   font-weight: bold;
 }
 
+.indicators div:hover {
+  cursor: pointer;
+}
+
 #active {
   background: red;
 }
@@ -131,11 +148,11 @@ p {
 .form_container {
   padding: 1rem;
   text-align: center;
-  -webkit-box-shadow: 2px 5px 8px gray;
-  box-shadow: 2px 5px 8px gray;
+  -webkit-box-shadow: 2px 5px 5px gray;
+  box-shadow: 2px 5px 5px gray;
   width: 50%;
   margin: 2rem auto;
-  border: 2px solid gray;
+  border: 1px solid gray;
 }
 
 .form_container input {
@@ -149,7 +166,7 @@ form input {
 
 form input:focus {
   outline: none;
-  border: 2px red solid;
+  border: 1px red solid;
 }
 
 #btn_add {
@@ -172,12 +189,12 @@ form input:focus {
 #btn_add:hover {
   border-radius: 10px;
   color: black;
-  border: 2px solid black;
+  border: 1px solid black;
   background-color: transparent;
 }
 
 .toggle_container {
-  border: 2px solid gray;
+  border: 1px solid gray;
   width: 50%;
   margin: 1rem auto;
   padding: 1rem;
@@ -194,8 +211,8 @@ form input:focus {
 
 .toggle_container:hover {
   border-radius: 5px;
-  -webkit-box-shadow: 2px 5px 10px gray;
-          box-shadow: 2px 5px 10px gray;
+  -webkit-box-shadow: 2px 5px 6px gray;
+  box-shadow: 2px 5px 6px gray;
 }
 
 label {
@@ -206,5 +223,12 @@ label {
 input {
   padding: 0.2rem 1rem;
   font-size: 1rem;
+}
+
+.fade {
+  -webkit-animation-name: fade;
+          animation-name: fade;
+  -webkit-animation-duration: 2s;
+          animation-duration: 2s;
 }
 /*# sourceMappingURL=style.css.map */
