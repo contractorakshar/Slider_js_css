@@ -41,6 +41,9 @@ body {
 img {
   height: 450px;
   background-size: contain;
+  &:hover {
+    cursor: grab;
+  }
 }
 .left {
   cursor: pointer;
@@ -192,5 +195,5 @@ input {
 }
 .fade {
   animation-name: fade;
-  animation-duration: 2s;
+  animation-duration: 0.5s;
 }

@@ -58,6 +58,11 @@ img {
   background-size: contain;
 }
 
+img:hover {
+  cursor: -webkit-grab;
+  cursor: grab;
+}
+
 .left {
   cursor: pointer;
   position: absolute;
@@ -174,7 +179,7 @@ form input:focus {
   font-size: medium;
   font-weight: bold;
   cursor: pointer;
-  border: none;
+  border: 1px solid transparent;
   line-height: 1.2rem;
   color: white;
   margin-top: 1rem;
@@ -226,7 +231,7 @@ input {
 .fade {
   -webkit-animation-name: fade;
           animation-name: fade;
-  -webkit-animation-duration: 2s;
-          animation-duration: 2s;
+  -webkit-animation-duration: 0.5s;
+          animation-duration: 0.5s;
 }
 /*# sourceMappingURL=style.css.map */

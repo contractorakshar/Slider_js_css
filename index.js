@@ -46,8 +46,14 @@ function changePageHandler(e) {
   slide_index = i;
   for (let k = 0; k < slides.length; k++) {
     if (k === i) {
+      document
+        .getElementsByClassName("sub_indicator")
+        [k].setAttribute("id", "active");
+
       slides[k].style.display = "block";
     } else {
+      document.getElementsByClassName("sub_indicator")[k].removeAttribute("id");
+
       slides[k].style.display = "none";
     }
   }
@@ -96,7 +102,6 @@ function nextSlide(n) {
 }
 //slide change by index
 function displaySlides(n) {
-  console.log(n);
   let slides = document.getElementsByClassName("showSlide");
 
   if (n > slides.length) {
