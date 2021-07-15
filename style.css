@@ -114,9 +114,7 @@ p {
 }
 
 .indicators {
-  position: absolute;
-  left: 45%;
-  bottom: 26%;
+  position: relative;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -127,9 +125,9 @@ p {
 
 .indicators div {
   line-height: 0;
-  padding: 0.9rem;
+  padding: 0.7rem;
   height: 0.9rem;
-  background-color: gray;
+  background-color: #a19999;
   font-size: 0.9rem;
   margin: 0 0.3rem;
   color: white;

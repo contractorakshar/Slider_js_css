@@ -26,7 +26,7 @@ function submitHanlder(event) {
   //adding new page and new sub indicator
   sub_indicator.innerText = index += 1;
   sub_indicator.className = "sub_indicator";
-  sub_indicator.addEventListener("click", function () {
+  sub_indicator.addEventListener("click", () => {
     changePageHandler(sub_indicator.innerText);
   });
   document.querySelector(".indicators").appendChild(sub_indicator);
@@ -36,14 +36,22 @@ function submitHanlder(event) {
 }
 function changePageHandler(e) {
   let i = parseInt(e);
-  i = i + 1;
+  i = i - 1;
+  let slides = document.getElementsByClassName("showSlide");
+
+  for (let k = 0; k < slides.length; k++) {
+    if (k === i) {
+      slides[k].style.display = "block";
+    } else {
+      slides[k].style.display = "none";
+    }
+  }
   // console.log(typeof i);
-  displaySlides(i);
 }
-//right left arrow toggle
 function toggleArrow(n) {
   if (n.checked && index > 0) {
     document.querySelector(".left").style.display = "block";
+    //right left arrow toggle
     document.querySelector(".right").style.display = "block";
   } else {
     document.querySelector(".left").style.display = "none";
@@ -79,7 +87,6 @@ function nextSlide(n) {
 }
 //slide change by index
 function displaySlides(n) {
-  // console.log(n);
   let slides = document.getElementsByClassName("showSlide");
 
   if (n > slides.length) {
