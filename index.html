@@ -18,28 +18,34 @@
     <div class="indicators"></div>
     <div class="toggle_container">
       <h3>Toggle Handler</h3>
-      <div style="text-align: center">
-        <input
-          type="checkbox"
-          id="toggle"
-          name="toggle"
-          onclick="toggleArrow(this)"
-        />
-        <label for="Toggle Arrow">Toggle Arrow</label>
-        <input
-          type="checkbox"
-          id="toggleIndicators"
-          name="toggleIndicators"
-          onclick="toggleIndicators(this)"
-          checked
-        />
-        <label for="Toggle Indicatore">Toggle Indicators</label>
-        <input
-          type="checkbox"
-          id="toggleSlideShow"
-          onclick="toggleSlidwShow(this)"
-        />
-        <label for="Toggle Indicatore">Automatic SlideShow</label>
+      <div>
+        <div class="input_wrapper">
+          <input
+            type="checkbox"
+            id="toggle"
+            name="toggle"
+            onclick="toggleArrow(this)"
+          />
+          <label for="Toggle Arrow">Toggle Arrow</label>
+        </div>
+        <div class="input_wrapper">
+          <input
+            type="checkbox"
+            id="toggleIndicators"
+            name="toggleIndicators"
+            onclick="toggleIndicators(this)"
+            checked
+          />
+          <label for="Toggle Indicatore">Toggle Indicators</label>
+        </div>
+        <div class="input_wrapper">
+          <input
+            type="checkbox"
+            id="toggleSlideShow"
+            onclick="toggleSlidwShow(this)"
+          />
+          <label for="Toggle Indicatore">Automatic SlideShow</label>
+        </div>
       </div>
     </div>
     <div class="form_container">

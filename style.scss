@@ -39,7 +39,7 @@ body {
   width: 30vw;
 }
 img {
-  height: 450px;
+  height: 28rem;
   background-size: contain;
   &:hover {
     cursor: grab;
@@ -50,10 +50,10 @@ img {
   position: absolute;
   top: 50%;
   width: auto;
-  padding: 16px;
+  padding: 1rem;
   color: white;
   font-weight: bold;
-  font-size: 18px;
+  font-size: 1.1rem;
   &:hover {
     background-color: black;
   }
@@ -63,10 +63,10 @@ img {
   position: absolute;
   top: 50%;
   width: auto;
-  padding: 16px;
+  padding: 1rem;
   color: white;
   font-weight: bold;
-  font-size: 18px;
+  font-size: 1.1rem;
   right: 0;
   border-radius: 3px 0 0 3px;
   &:hover {
@@ -87,7 +87,7 @@ p {
   left: 25%;
   color: #0d0c0c;
   font-size: 2rem;
-  padding: 8px 12px;
+  padding: 0.5rem 0.75rem;
   position: absolute;
   top: 10px;
   width: 50%;
@@ -121,6 +121,7 @@ p {
   background: red;
 }
 .form_container {
+  min-width: 300px;
   padding: 1rem;
   text-align: center;
   -webkit-box-shadow: 2px 5px 5px gray;
@@ -146,6 +147,7 @@ form {
   background-color: #355c7d;
   padding: 0.5rem 0;
   width: 30%;
+  min-width: 30%;
   font-size: medium;
   font-weight: bold;
   cursor: pointer;
@@ -168,10 +170,11 @@ form {
   width: 50%;
   margin: 1rem auto;
   padding: 1rem;
-
-  h3 {
-    text-align: center;
-    margin-bottom: 1rem;
+  min-width: 300px;
+  text-align: center;
+  .input_wrapper {
+    display: inline-flex;
+    align-items: center;
   }
   input {
     &:focus {
@@ -180,7 +183,6 @@ form {
   }
   &:hover {
     border-radius: 5px;
-
     -webkit-box-shadow: 2px 5px 6px gray;
     box-shadow: 2px 5px 6px gray;
   }
@@ -196,4 +198,14 @@ input {
 .fade {
   animation-name: fade;
   animation-duration: 0.5s;
+}
+@media (max-width: 30rem), (max-width: 60rem) {
+  .toggle_container {
+    div {
+      text-align: left;
+    }
+    .input_wrapper {
+      display: block;
+    }
+  }
 }

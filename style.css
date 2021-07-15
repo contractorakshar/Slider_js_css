@@ -54,7 +54,7 @@ body {
 }
 
 img {
-  height: 450px;
+  height: 28rem;
   background-size: contain;
 }
 
@@ -68,10 +68,10 @@ img:hover {
   position: absolute;
   top: 50%;
   width: auto;
-  padding: 16px;
+  padding: 1rem;
   color: white;
   font-weight: bold;
-  font-size: 18px;
+  font-size: 1.1rem;
 }
 
 .left:hover {
@@ -83,10 +83,10 @@ img:hover {
   position: absolute;
   top: 50%;
   width: auto;
-  padding: 16px;
+  padding: 1rem;
   color: white;
   font-weight: bold;
-  font-size: 18px;
+  font-size: 1.1rem;
   right: 0;
   border-radius: 3px 0 0 3px;
 }
@@ -110,7 +110,7 @@ p {
   left: 25%;
   color: #0d0c0c;
   font-size: 2rem;
-  padding: 8px 12px;
+  padding: 0.5rem 0.75rem;
   position: absolute;
   top: 10px;
   width: 50%;
@@ -149,6 +149,7 @@ p {
 }
 
 .form_container {
+  min-width: 300px;
   padding: 1rem;
   text-align: center;
   -webkit-box-shadow: 2px 5px 5px gray;
@@ -176,6 +177,7 @@ form input:focus {
   background-color: #355c7d;
   padding: 0.5rem 0;
   width: 30%;
+  min-width: 30%;
   font-size: medium;
   font-weight: bold;
   cursor: pointer;
@@ -201,11 +203,17 @@ form input:focus {
   width: 50%;
   margin: 1rem auto;
   padding: 1rem;
+  min-width: 300px;
+  text-align: center;
 }
 
-.toggle_container h3 {
-  text-align: center;
-  margin-bottom: 1rem;
+.toggle_container .input_wrapper {
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 .toggle_container input:focus {
@@ -233,5 +241,14 @@ input {
           animation-name: fade;
   -webkit-animation-duration: 0.5s;
           animation-duration: 0.5s;
+}
+
+@media (max-width: 30rem), (max-width: 60rem) {
+  .toggle_container div {
+    text-align: left;
+  }
+  .toggle_container .input_wrapper {
+    display: block;
+  }
 }
 /*# sourceMappingURL=style.css.map */
