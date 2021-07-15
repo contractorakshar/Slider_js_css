@@ -1,8 +1,47 @@
 "use strict";
 let index = 0;
 let slide_index = 0;
+document
+  .querySelector(".slidercontainer")
+  .addEventListener("touchstart", handleTouchStart);
+document
+  .querySelector(".slidercontainer")
+  .addEventListener("touchmove", handleTouchMove);
 
-//return page index
+var xStart = null;
+var yStart = null;
+
+function getTouches(evt) {
+  return evt.touches || evt.originalEvent.touches;
+}
+
+function handleTouchStart(evt) {
+  const firstTouch = getTouches(evt)[0];
+  xStart = firstTouch.clientX;
+  yStart = firstTouch.clientY;
+}
+
+function handleTouchMove(evt) {
+  if (!xStart || !yStart) {
+    return;
+  }
+  var xUp = evt.touches[0].clientX;
+  var yUp = evt.touches[0].clientY;
+
+  var xDiff = xStart - xUp;
+  var yDiff = yStart - yUp;
+
+  if (Math.abs(xDiff) > Math.abs(yDiff)) {
+    if (xDiff > 0) {
+      nextSlide(-1);
+    } else {
+      nextSlide(1);
+    }
+  }
+
+  xStart = null;
+  yStart = null;
+}
 
 //for adding new page
 function submitHanlder(event) {
@@ -83,6 +122,7 @@ function Remove() {
   ) {
     document.getElementsByClassName("sub_indicator")[i].innerText = i + 1;
   }
+
   index += -1;
   nextSlide(-1);
 }
