@@ -1,5 +1,8 @@
 "use strict";
 let index = 0;
+let slide_index = 0;
+
+//return page index
 
 //for adding new page
 function submitHanlder(event) {
@@ -37,8 +40,10 @@ function submitHanlder(event) {
 function changePageHandler(e) {
   let i = parseInt(e);
   i = i - 1;
-  let slides = document.getElementsByClassName("showSlide");
 
+  // console.log(e);
+  let slides = document.getElementsByClassName("showSlide");
+  slide_index = i;
   for (let k = 0; k < slides.length; k++) {
     if (k === i) {
       slides[k].style.display = "block";
@@ -65,7 +70,13 @@ function Remove() {
 
   document.getElementsByClassName("sub_indicator")[pageIndex - 1].remove();
   document.getElementsByClassName("showSlide")[pageIndex - 1].remove();
-
+  for (
+    let i = 0;
+    i < document.getElementsByClassName("sub_indicator").length;
+    i++
+  ) {
+    document.getElementsByClassName("sub_indicator")[i].innerText = i + 1;
+  }
   index += -1;
   nextSlide(-1);
 }
@@ -78,8 +89,6 @@ function toggleIndicators(i) {
   }
 }
 
-let slide_index = 0;
-
 displaySlides(slide_index);
 
 function nextSlide(n) {
@@ -87,6 +96,7 @@ function nextSlide(n) {
 }
 //slide change by index
 function displaySlides(n) {
+  console.log(n);
   let slides = document.getElementsByClassName("showSlide");
 
   if (n > slides.length) {
