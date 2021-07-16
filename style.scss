@@ -14,6 +14,7 @@
   box-sizing: border-box;
 }
 h3 {
+  margin-bottom: 0.5rem;
   text-decoration: underline;
 }
 a {
@@ -195,7 +196,17 @@ label {
   padding: 0.2rem 1rem;
   font-size: 1rem;
 }
-input {
+
+select {
+  width: 50%;
+  &:focus {
+    outline: none;
+  }
+}
+
+input,
+select {
+  caret-color: red;
   padding: 0.2rem 1rem;
   font-size: 1rem;
 }

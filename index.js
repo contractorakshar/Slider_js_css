@@ -43,10 +43,28 @@ function handleTouchMove(evt) {
   xStart = null;
   yStart = null;
 }
+const insertBeforeAnyIndex = (container_new) => {
+  // console.log("before");
+  let add_index = document.getElementById("add_by_index").value;
 
+  const parent_div = document.querySelector(".slidercontainer");
+
+  const child = document.getElementsByClassName("showSlide")[add_index - 1];
+
+  parent_div.insertBefore(container_new, child);
+};
+
+const inserAfterAnyIndex = (container_new) => {
+  // console.log("after");
+  let add_index = document.getElementById("add_by_index").value;
+  document
+    .getElementsByClassName("showSlide")
+    [add_index - 1].after(container_new);
+};
 //for adding new page
 function submitHanlder(event) {
   event.preventDefault();
+
   //getting value from input
   const imgSrc = document.getElementById("carosoule_img").value;
   const headText = document.getElementById("carosoule_heading").value;
@@ -63,7 +81,13 @@ function submitHanlder(event) {
 
   container.append(imgContainer);
   container.append(head);
-  document.querySelector(".slidercontainer").appendChild(container);
+  if (document.getElementById("dropdown_index").value === "Before") {
+    insertBeforeAnyIndex(container);
+  } else if (document.getElementById("dropdown_index").value === "After") {
+    inserAfterAnyIndex(container);
+  } else {
+    document.querySelector(".slidercontainer").appendChild(container);
+  }
 
   const sub_indicator = document.createElement("div");
   //adding new page and new sub indicator
