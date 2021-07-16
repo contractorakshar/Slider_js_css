@@ -135,6 +135,7 @@ p {
   padding: 0.7rem;
   height: 0.9rem;
   background-color: #a19999;
+  border: 1px solid black;
   font-size: 0.9rem;
   margin: 0 0.3rem;
   color: white;
@@ -147,7 +148,7 @@ p {
 }
 
 #active {
-  background: red;
+  background: #f04c4c;
 }
 
 .form_container {

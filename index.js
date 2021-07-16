@@ -1,4 +1,5 @@
 "use strict";
+
 let index = 0;
 let slide_index = 0;
 document
@@ -138,7 +139,21 @@ function toggleIndicators(i) {
 displaySlides(slide_index);
 
 function nextSlide(n) {
-  displaySlides((slide_index += n));
+  let temp = (slide_index += n);
+  displaySlides(temp);
+  for (let i = 0; i < temp; i++) {
+    if (i === slide_index - 1) {
+      document
+        .getElementsByClassName("sub_indicator")
+        [i].setAttribute("id", "active");
+    } else {
+      if (i <= slide_index) {
+        document
+          .getElementsByClassName("sub_indicator")
+          [i].removeAttribute("id");
+      }
+    }
+  }
 }
 //slide change by index
 function displaySlides(n) {
