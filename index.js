@@ -196,9 +196,11 @@ function displaySlides(n) {
 //automatic scroll
 function toggleSlidwShow(slideShow) {
   if (slideShow.checked) {
-    setTimeout(() => {
+    let t = setTimeout(() => {
       nextSlide(1);
       toggleSlidwShow(slideShow);
     }, 3000);
+  } else {
+    clearTimeout(t);
   }
 }
