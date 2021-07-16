@@ -27,10 +27,16 @@ html {
 }
 .showSlide {
   display: none;
+  height: 30rem;
   -webkit-box-shadow: 2px 5px 5px gray;
   box-shadow: 2px 5px 5px gray;
   img {
     width: 100%;
+    height: 100%;
+    background-size: contain;
+    &:hover {
+      cursor: grab;
+    }
   }
 }
 .slidercontainer {
@@ -40,13 +46,7 @@ html {
   margin-top: 1.5rem;
   width: 30%;
 }
-img {
-  height: 28rem;
-  background-size: contain;
-  &:hover {
-    cursor: grab;
-  }
-}
+
 .left {
   cursor: pointer;
   position: absolute;
@@ -97,7 +97,8 @@ p {
   text-align: center;
 }
 .indicators {
-  position: relative;
+  margin-top: 0.5rem;
+  // position: relative;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;

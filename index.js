@@ -142,16 +142,13 @@ function nextSlide(n) {
   let temp = (slide_index += n);
   displaySlides(temp);
   for (let i = 0; i < temp; i++) {
+    if (document.getElementsByClassName("sub_indicator")[i]) {
+      document.getElementsByClassName("sub_indicator")[i].removeAttribute("id");
+    }
     if (i === slide_index - 1) {
       document
         .getElementsByClassName("sub_indicator")
         [i].setAttribute("id", "active");
-    } else {
-      if (i <= slide_index) {
-        document
-          .getElementsByClassName("sub_indicator")
-          [i].removeAttribute("id");
-      }
     }
   }
 }
