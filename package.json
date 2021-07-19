@@ -16,5 +16,8 @@
   "bugs": {
     "url": "https://github.com/contractorakshar/Slider_js_css/issues"
   },
-  "homepage": "https://github.com/contractorakshar/Slider_js_css#readme"
+  "homepage": "https://github.com/contractorakshar/Slider_js_css#readme",
+  "dependencies": {
+    "json-server": "^0.16.3"
+  }
 }

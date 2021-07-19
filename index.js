@@ -107,6 +107,18 @@ function submitHanlder(event) {
     Remove(index);
   });
   document.getElementById("form_wrapper").reset();
+  //show multiple slides
+  // if (index >= 3) {
+  //   let temp = index;
+  //   let prev = document.getElementsByClassName("showSlide")[temp - 1];
+  //   let clone = prev.cloneNode(true);
+  //   console.log(clone);
+  //   if (temp + 1 > index) {
+  //     let next = document.getElementsByClassName("showSlide")[0];
+  //   } else {
+  //     let next = document.getElementsByClassName("showSlide")[temp + 1];
+  //   }
+  // }
 }
 function changePageHandler(e) {
   let i = parseInt(e);
