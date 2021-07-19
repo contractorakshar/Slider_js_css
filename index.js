@@ -43,6 +43,27 @@ function handleTouchMove(evt) {
   xStart = null;
   yStart = null;
 }
+
+function previewfile(e) {
+  document.getElementById("preview_img").src = URL.createObjectURL(
+    e.target.files[0]
+  );
+  const remove_preview_btn = document.createElement("button");
+  remove_preview_btn.innerText = "x";
+  remove_preview_btn.setAttribute("id", "remove_preview_img");
+  remove_preview_btn.addEventListener("click", (e) => {
+    e.preventDefault();
+    removePreview();
+  });
+  document.getElementById("preivew_wrapper").appendChild(remove_preview_btn);
+}
+
+function removePreview() {
+  document.getElementById("preview_img").src = "";
+  document.getElementById("carosoule_img").value = "";
+  document.getElementById("remove_preview_img").style.display = "none";
+}
+
 const insertBeforeAnyIndex = (container_new) => {
   // console.log("before");
   let add_index = document.getElementById("add_by_index").value;
@@ -62,6 +83,7 @@ const inserAfterAnyIndex = (container_new) => {
     [add_index - 1].after(container_new);
 };
 //for adding new page
+
 function submitHanlder(event) {
   event.preventDefault();
 
@@ -106,6 +128,7 @@ function submitHanlder(event) {
   del_btn.addEventListener("click", () => {
     Remove(index);
   });
+
   document.getElementById("form_wrapper").reset();
   //show multiple slides
   // if (index >= 3) {

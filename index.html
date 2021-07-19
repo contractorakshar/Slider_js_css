@@ -58,10 +58,17 @@
         /><br />
         <input
           required
-          type="url"
+          type="file"
+          accept="image/*"
           id="carosoule_img"
+          onchange="previewfile(event)"
           placeholder="Enter Image url"
-        /><br />
+        />
+        <br />
+        <div id="preivew_wrapper">
+          <img id="preview_img" alt="your image" height="200px" width="200px" />
+        </div>
+        <br />
         <select id="dropdown_index">
           <option selected>Append (default)</option>
           <option>Before</option>

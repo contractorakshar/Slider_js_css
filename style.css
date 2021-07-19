@@ -266,7 +266,24 @@ select {
   -webkit-animation-duration: 0.5s;
   animation-duration: 0.5s;
 }
+#preivew_wrapper {
+  position: relative;
+  display: inline-block;
+}
 
+#remove_preview_img {
+  position: absolute;
+  color: red;
+  font-size: 1.2rem;
+  font-weight: bold;
+  background-color: black;
+  border: none;
+  padding: 0.3rem;
+  border-radius: 50%;
+  top: 0;
+  right: 0;
+  cursor: url("https://i.stack.imgur.com/bUGV0.png"), auto;
+}
 @media (max-width: 69rem) {
   .toggle_container div {
     text-align: left;
@@ -275,4 +292,3 @@ select {
     display: block;
   }
 }
-/*# sourceMappingURL=style.css.map */
