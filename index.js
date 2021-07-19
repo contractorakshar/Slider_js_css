@@ -43,8 +43,9 @@ function handleTouchMove(evt) {
   xStart = null;
   yStart = null;
 }
-
+let imgPath;
 function previewfile(e) {
+  imgPath = URL.createObjectURL(e.target.files[0]);
   document.getElementById("preview_img").src = URL.createObjectURL(
     e.target.files[0]
   );
@@ -88,7 +89,8 @@ function submitHanlder(event) {
   event.preventDefault();
 
   //getting value from input
-  const imgSrc = document.getElementById("carosoule_img").value;
+
+  const imgSrc = imgPath;
   const headText = document.getElementById("carosoule_heading").value;
   const container = document.createElement("div");
   container.className = "showSlide";
@@ -128,7 +130,7 @@ function submitHanlder(event) {
   del_btn.addEventListener("click", () => {
     Remove(index);
   });
-
+  removePreview();
   document.getElementById("form_wrapper").reset();
   //show multiple slides
   // if (index >= 3) {
