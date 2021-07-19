@@ -49,8 +49,16 @@ function previewfile(e) {
   document.getElementById("preview_img").src = URL.createObjectURL(
     e.target.files[0]
   );
+  if (e.target.files[0].size > 1048576) {
+    alert(
+      "please select file size less than 1 mb or compress it, current file size " +
+        (e.target.files[0].size / 1048576).toPrecision(2) +
+        "mb"
+    );
+    removePreview();
+  }
   const remove_preview_btn = document.createElement("button");
-  remove_preview_btn.innerText = "x";
+  remove_preview_btn.innerText = "❌";
   remove_preview_btn.setAttribute("id", "remove_preview_img");
   remove_preview_btn.addEventListener("click", (e) => {
     e.preventDefault();
@@ -62,7 +70,7 @@ function previewfile(e) {
 function removePreview() {
   document.getElementById("preview_img").src = "";
   document.getElementById("carosoule_img").value = "";
-  document.getElementById("remove_preview_img").style.display = "none";
+  document.getElementById("remove_preview_img").remove();
 }
 
 const insertBeforeAnyIndex = (container_new) => {

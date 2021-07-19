@@ -206,7 +206,7 @@ form input:focus {
 }
 
 #btn_add:hover {
-  border-radius: 10px;
+  border-radius: 20px;
   color: black;
   border: 1px solid black;
   background-color: transparent;
@@ -274,10 +274,8 @@ select {
 #remove_preview_img {
   position: absolute;
   color: red;
-  font-size: 1.2rem;
-  font-weight: bold;
-  background-color: black;
   border: none;
+  background-color: black;
   padding: 0.3rem;
   border-radius: 50%;
   top: 0;
