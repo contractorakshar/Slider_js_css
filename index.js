@@ -70,17 +70,21 @@ function submitHanlder(event) {
   const headText = document.getElementById("carosoule_heading").value;
   const container = document.createElement("div");
   container.className = "showSlide";
-
+  const del_btn = document.createElement("button");
+  del_btn.innerHTML = "❌";
   const imgContainer = document.createElement("img");
 
   imgContainer.src = `${imgSrc}`;
   imgContainer.className = "fade";
+
   const head = document.createElement("div");
   head.className = "content";
   head.innerText = headText;
+  del_btn.className = "remove_slider";
 
   container.append(imgContainer);
   container.append(head);
+  container.append(del_btn);
   if (document.getElementById("dropdown_index").value === "Before") {
     insertBeforeAnyIndex(container);
   } else if (document.getElementById("dropdown_index").value === "After") {
@@ -91,6 +95,7 @@ function submitHanlder(event) {
 
   const sub_indicator = document.createElement("div");
   //adding new page and new sub indicator
+
   sub_indicator.innerText = index += 1;
   sub_indicator.className = "sub_indicator";
   sub_indicator.addEventListener("click", () => {
@@ -98,7 +103,9 @@ function submitHanlder(event) {
   });
   document.querySelector(".indicators").appendChild(sub_indicator);
   nextSlide(1);
-
+  del_btn.addEventListener("click", () => {
+    Remove(index);
+  });
   document.getElementById("form_wrapper").reset();
 }
 function changePageHandler(e) {
@@ -135,11 +142,11 @@ function toggleArrow(n) {
 }
 
 //remove and img according to index
-function Remove() {
-  const pageIndex = document.getElementById("remove_index").value;
+function Remove(j) {
+  // const pageIndex = document.getElementById("remove_index").value;
 
-  document.getElementsByClassName("sub_indicator")[pageIndex - 1].remove();
-  document.getElementsByClassName("showSlide")[pageIndex - 1].remove();
+  document.getElementsByClassName("sub_indicator")[j - 1].remove();
+  document.getElementsByClassName("showSlide")[j - 1].remove();
   for (
     let i = 0;
     i < document.getElementsByClassName("sub_indicator").length;
@@ -194,13 +201,13 @@ function displaySlides(n) {
   }
 }
 //automatic scroll
+let t;
 function toggleSlidwShow(slideShow) {
+  clearTimeout(t);
   if (slideShow.checked) {
-    let t = setTimeout(() => {
+    t = setTimeout(() => {
       nextSlide(1);
       toggleSlidwShow(slideShow);
     }, 3000);
-  } else {
-    clearTimeout(t);
   }
 }

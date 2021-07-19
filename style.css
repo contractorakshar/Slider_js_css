@@ -119,6 +119,18 @@ p {
   text-align: center;
 }
 
+.remove_slider {
+  right: 3%;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  position: absolute;
+  top: 10px;
+  width: 8%;
+}
+.remove_slider:focus {
+  outline: none;
+}
 .indicators {
   margin-top: 0.5rem;
   display: -webkit-box;
@@ -214,8 +226,8 @@ form input:focus {
   display: -ms-inline-flexbox;
   display: inline-flex;
   -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
 }
 
 .toggle_container input:focus {
@@ -250,9 +262,9 @@ select {
 
 .fade {
   -webkit-animation-name: fade;
-          animation-name: fade;
+  animation-name: fade;
   -webkit-animation-duration: 0.5s;
-          animation-duration: 0.5s;
+  animation-duration: 0.5s;
 }
 
 @media (max-width: 69rem) {
